@@ -1,17 +1,13 @@
 import React, { FC, ChangeEvent, useState } from "react";
-import { useEffect } from "react";
 import "./App.css";
 import TodoTask, { ITask } from "./Components/TodoTask";
+
 
 
 const App: FC = () => {
   const [task, setTask] = useState<string>("");
   const [deadline, setDealine] = useState<number>(0);
   const [todoList, setTodoList] = useState<ITask[]>([]);
-
-  useEffect(() => {
-    localStorage.setItem("todoList", JSON.stringify(todoList));
-  }, [todoList])
 
 
 
